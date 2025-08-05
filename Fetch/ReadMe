@@ -1,0 +1,36 @@
+README
+
+An Overview of Implementation
+
+I decided to use SwiftUI for this test, since that is your preferred methodology.
+It's also nice to get to use it more extensively, as many of the projects I work
+on for my day job use much older archetecture. If necessary though I can also use
+storyboards (the splash screen is storyboarded) or autolayout code in Swift and
+(heaven forfend!) Objective C.
+
+You may notice that the API implementation is rather elaborated, given how simple
+the API provided is. This is intentional. It makes the project easier to modify and
+adapt going forward, were we to implement further functionality. However, I did
+think that the API was peculiar in that it did not use the standard method for
+providing parameters. I included this in the API Request structure too, just in
+case and because it's a quick and easy addition.
+
+When implementing the list of dog breeds, I noticed that the API actually provides
+both breeds and sub-breeds. With this in mind, I created a hierarchic structure
+rather than a flat one. A breed with associated sub-breeds has a darker disclosure
+arrow rather than a light one. Breed entries can still be tapped in order to view
+general images, but it is also possible to expand the sub-breeds associated with
+it and select a specific sub-breed.
+
+I also implemented a simple alphabetic sorting and sectioning system, since there
+are a lot of entries in the list and this makes them easier to search through
+manually.
+
+Finally, I added a search box for extra speed. This filters the list, retaining
+only those breeds whose name contains the entered text, and those with a sub-breed
+that matches the text. In the latter case, only matching sub-breeds are
+shown in the disclosure.
+
+I also drew up a quick app icon and splash screen. I can't stand having an app with
+no proper branding! I designed the image myself using Affinity Designer; I'm using
+vector-based PDFs for optimum file size and scalability.
